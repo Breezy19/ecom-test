@@ -23,9 +23,14 @@ export class App extends Component {
         auth.onAuthStateChanged(user => {
             if (user) {
                 db.collection('SignedUpUsersData').doc(user.uid).get().then(snapshot => {
-                    this.setState({
-                        user: snapshot.data().Name
-                    })
+                    const userData = snapshot.data();
+                    if (userData) {
+                        this.setState({
+                            user: userData.Name
+                        })
+                    } else {
+                        console.log(`No document found with id: ${user.uid}`);
+                    }
                 })
             }
             else {

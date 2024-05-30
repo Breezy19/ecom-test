@@ -3,8 +3,6 @@ import { Footer } from './Footer';
 import { Navbar } from './Navbar';
 import { Products } from './Products'
 import { ContactInfo } from './ContactInfo';
-import { ContactForm } from './ContactForm';
-import { AboutUs } from './AboutUs';
 import { useHistory } from 'react-router-dom'
 import { auth } from '../Config/Config'
 
@@ -26,8 +24,6 @@ export const Home = ({ user }) => {
             <Navbar user={user} />
             <Products />
             <ContactInfo />
-            <ContactForm />
-            <AboutUs />
             <Footer />
         </div>
     )

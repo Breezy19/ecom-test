@@ -27,7 +27,7 @@ export const AddProducts = ({ user }) => {
     const [productImg, setProductImg] = useState(null);
     const [error, setError] = useState('');
 
-    const types = ['image/png', 'image/jpeg']; // image types
+    const types = ['image/png', 'image/jpeg', 'image/jpg']; // image types
 
     const productImgHandler = (e) => {
         let selectedFile = e.target.files[0];
@@ -37,7 +37,7 @@ export const AddProducts = ({ user }) => {
         }
         else {
             setProductImg(null);
-            setError('Please select a valid image type (jpg or png)');
+            setError('Please select a valid image type (jpg or jpeg or png)');
         }
     }
 

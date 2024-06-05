@@ -1,20 +1,18 @@
-import * as firebase from 'firebase'
-
+import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
-import 'firebase/auth'
+import 'firebase/auth';
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "****REDACTED****",
-    authDomain: "ecommerce-website-85737.firebaseapp.com",
-    databaseURL: "https://ecommerce-website-85737-default-rtdb.firebaseio.com/",
-    projectId: "ecommerce-website-85737",
-    storageBucket: "ecommerce-website-85737.appspot.com",
-    messagingSenderId: "893071101658",
-    appId: "1:893071101658:web:86210a42d39b20c52f9fe3",
-    measurementId: "G-QZ8QDPE6QH"
-  };
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
 
 firebase.initializeApp(firebaseConfig);
 
@@ -22,4 +20,4 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 const storage = firebase.storage();
 
-export { auth, db, storage }
+export { auth, db, storage };

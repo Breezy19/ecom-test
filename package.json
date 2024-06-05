@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Breezy19.github.io/ecom-test",
   "name": "ecommerce-with-react",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,7 @@
     "firebase": "^7.19.1",
     "framer-motion": "^2.6.12",
     "get-google-fonts": "^1.2.2",
+    "gh-pages": "^6.1.1",
     "mdb-react-ui-kit": "^8.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -28,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
